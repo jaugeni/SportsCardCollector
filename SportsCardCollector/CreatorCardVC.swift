@@ -8,20 +8,26 @@
 
 import UIKit
 
-class CreatorCardVC: UIViewController {
+class CreatorCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var titleTextFild: UITextField!
 
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imagePicker.delegate = self
+        
     }
 
     @IBAction func photoBtn(_ sender: Any) {
+        
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
         
     }
     
