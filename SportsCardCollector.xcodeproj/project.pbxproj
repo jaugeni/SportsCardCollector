@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		935854DB1DCB944C003545C9 /* CreatorCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935854DA1DCB944C003545C9 /* CreatorCardVC.swift */; };
 		9391B03D1DCB88FC00CFF750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B03C1DCB88FC00CFF750 /* AppDelegate.swift */; };
-		9391B03F1DCB88FC00CFF750 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B03E1DCB88FC00CFF750 /* ViewController.swift */; };
+		9391B03F1DCB88FC00CFF750 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B03E1DCB88FC00CFF750 /* MainVC.swift */; };
 		9391B0421DCB88FC00CFF750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9391B0401DCB88FC00CFF750 /* Main.storyboard */; };
 		9391B0451DCB88FC00CFF750 /* SportsCardCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9391B0431DCB88FC00CFF750 /* SportsCardCollector.xcdatamodeld */; };
 		9391B0471DCB88FC00CFF750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9391B0461DCB88FC00CFF750 /* Assets.xcassets */; };
@@ -16,9 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		935854DA1DCB944C003545C9 /* CreatorCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorCardVC.swift; sourceTree = "<group>"; };
 		9391B0391DCB88FC00CFF750 /* SportsCardCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsCardCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9391B03C1DCB88FC00CFF750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9391B03E1DCB88FC00CFF750 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9391B03E1DCB88FC00CFF750 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		9391B0411DCB88FC00CFF750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9391B0441DCB88FC00CFF750 /* SportsCardCollector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsCardCollector.xcdatamodel; sourceTree = "<group>"; };
 		9391B0461DCB88FC00CFF750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		935854D91DCB8B0D003545C9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9391B03E1DCB88FC00CFF750 /* MainVC.swift */,
+				935854DA1DCB944C003545C9 /* CreatorCardVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		9391B0301DCB88FC00CFF750 = {
 			isa = PBXGroup;
 			children = (
@@ -56,8 +67,8 @@
 		9391B03B1DCB88FC00CFF750 /* SportsCardCollector */ = {
 			isa = PBXGroup;
 			children = (
+				935854D91DCB8B0D003545C9 /* Controllers */,
 				9391B03C1DCB88FC00CFF750 /* AppDelegate.swift */,
-				9391B03E1DCB88FC00CFF750 /* ViewController.swift */,
 				9391B0401DCB88FC00CFF750 /* Main.storyboard */,
 				9391B0461DCB88FC00CFF750 /* Assets.xcassets */,
 				9391B0481DCB88FC00CFF750 /* LaunchScreen.storyboard */,
@@ -140,7 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9391B03F1DCB88FC00CFF750 /* ViewController.swift in Sources */,
+				9391B03F1DCB88FC00CFF750 /* MainVC.swift in Sources */,
+				935854DB1DCB944C003545C9 /* CreatorCardVC.swift in Sources */,
 				9391B03D1DCB88FC00CFF750 /* AppDelegate.swift in Sources */,
 				9391B0451DCB88FC00CFF750 /* SportsCardCollector.xcdatamodeld in Sources */,
 			);
@@ -306,6 +318,7 @@
 				9391B0501DCB88FC00CFF750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

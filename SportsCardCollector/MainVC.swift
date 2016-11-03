@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  Main.swift
 //  SportsCardCollector
 //
 //  Created by YAUHENI IVANIUK on 11/3/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
