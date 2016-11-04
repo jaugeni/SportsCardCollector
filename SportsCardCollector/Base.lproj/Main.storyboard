@@ -13,7 +13,7 @@
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="SportsCardCollector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainVC" customModule="SportsCardCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,15 +21,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fc-ky-brN">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1fc-ky-brN" secondAttribute="bottom" id="Hlz-Wp-PLU"/>
+                            <constraint firstAttribute="trailing" secondItem="1fc-ky-brN" secondAttribute="trailing" id="NSY-nA-Gwc"/>
+                            <constraint firstItem="1fc-ky-brN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SPx-eA-osg"/>
+                            <constraint firstItem="1fc-ky-brN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bkL-wv-vkl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dxb-9Y-3jH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RnX-Z7-03C">
                             <connections>
-                                <segue destination="0HS-X0-mfQ" kind="show" id="NI6-tI-v44"/>
+                                <segue destination="0HS-X0-mfQ" kind="show" identifier="cardSegue" id="NI6-tI-v44"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tablView" destination="1fc-ky-brN" id="qAG-6T-xZk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="Htp-6p-Ybk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Htp-6p-Ybk">
                                 <rect key="frame" x="37" y="109" width="340" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="340" id="idg-zD-gDi"/>
@@ -67,11 +82,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnC-xs-rfa">
+                                <rect key="frame" x="185" y="429" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Lt6-rH-pEG" firstAttribute="centerX" secondItem="6qq-gF-pIY" secondAttribute="centerX" id="62F-Ro-cDM"/>
+                            <constraint firstItem="EnC-xs-rfa" firstAttribute="centerX" secondItem="6qq-gF-pIY" secondAttribute="centerX" id="DhB-c3-AGD"/>
                             <constraint firstItem="Lt6-rH-pEG" firstAttribute="top" secondItem="GHl-q3-U5g" secondAttribute="bottom" constant="20" id="H16-h6-bnp"/>
+                            <constraint firstItem="EnC-xs-rfa" firstAttribute="top" secondItem="Lt6-rH-pEG" secondAttribute="bottom" constant="20" id="LGq-JI-DxU"/>
                             <constraint firstItem="GHl-q3-U5g" firstAttribute="top" secondItem="Htp-6p-Ybk" secondAttribute="bottom" constant="20" id="MmT-dU-sUB"/>
                             <constraint firstItem="Htp-6p-Ybk" firstAttribute="centerX" secondItem="6qq-gF-pIY" secondAttribute="centerX" id="OM7-a1-DLH"/>
                             <constraint firstItem="Htp-6p-Ybk" firstAttribute="top" secondItem="H59-H2-pfN" secondAttribute="bottom" constant="45" id="R31-da-e4Z"/>
@@ -94,6 +115,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateBtn" destination="Lt6-rH-pEG" id="xpb-V3-qUT"/>
+                        <outlet property="deleteOutlet" destination="EnC-xs-rfa" id="O2n-PA-LfQ"/>
                         <outlet property="imageView" destination="Htp-6p-Ybk" id="iWB-k8-Oui"/>
                         <outlet property="titleTextFild" destination="GHl-q3-U5g" id="HAm-3n-XVa"/>
                     </connections>
@@ -121,7 +144,4 @@
             <point key="canvasLocation" x="-31.199999999999999" y="691.304347826087"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="unnamed" width="600" height="600"/>
-    </resources>
 </document>
